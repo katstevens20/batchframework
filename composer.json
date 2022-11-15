@@ -1,6 +1,7 @@
 {
   "name": "batch-framework",
   "description": "Core framework for jobs in php 7.4",
+  "type": "library",
   "authors": [
     {
       "name": "Khalid ATLASSI",
@@ -8,6 +9,7 @@
     }
   ],
   "require": {
+    "php": ">=7.4",
     "monolog/monolog": "^1.26",
     "ext-pdo": "*",
     "symfony/dotenv": "*"
@@ -17,7 +19,7 @@
       "Kat\\BatchFramework\\": "src/"
     }
   },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "require-dev": {
     "phpunit/phpunit": "^9.5.19",
     "pestphp/pest": "^1.21",
@@ -26,12 +28,6 @@
   "autoload-dev": {
     "psr-4": {
       "tests\\": "tests/"
-    }
-  },
-  "config": {
-    "allow-plugins": true,
-    "platform": {
-      "php": "7.4"
     }
   }
 }
