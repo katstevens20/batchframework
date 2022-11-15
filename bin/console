@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+use Kat\BatchFramework\Core\Console;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+ini_set('memory_limit', '2048M');
+date_default_timezone_set('Europe/Paris');
+
+$console = new Console();
+$console($argv, __DIR__ . '/../.env');
+
+
