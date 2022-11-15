@@ -1,5 +1,5 @@
 {
-  "name": "batch-framework",
+  "name": "kat/batch-framework",
   "description": "Core framework for jobs in php 7.4",
   "type": "library",
   "license": "proprietary",
