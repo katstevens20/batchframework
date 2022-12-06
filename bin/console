@@ -8,7 +8,13 @@ require __DIR__ . '/../vendor/autoload.php';
 ini_set('memory_limit', '2048M');
 date_default_timezone_set('Europe/Paris');
 
-$console = new Console();
-$console($argv, __DIR__ . '/../.env');
+try {
+    $console = new Console();
+    $console($argv, __DIR__ . '/../.env');
+} catch (Exception $e) {
+    echo "\nERR: " . $e->getMessage() . "\n";
+    echo $e->getTraceAsString();
+    exit(1);
+}
 
 

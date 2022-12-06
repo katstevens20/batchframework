@@ -43,11 +43,7 @@ class Console
             $runner(new $commandClassName(), $arguments, $logger);
 
         } catch (Exception $e) {
-            if ($logger) {
-                $logger->error($e->getTraceAsString());
-            } else {
-                echo 'Error: ' . $e->getMessage() . "\n";
-            }
+            throw $e;
         }
     }
 }
