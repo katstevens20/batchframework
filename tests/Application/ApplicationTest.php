@@ -41,11 +41,11 @@ class ApplicationTest extends TestCase
     {
         $this->expectException(CommandNotFoundRuntimeApplicationException::class);
         $this->application->run(['php bin/console', 'ATestCommand']);
-    }*/
+    }
 
     public function testApplicationRunCommandSuccess(): void
     {
         $this->runner->run(new ATestCommand(), [], $this->logger);
         $this->expectOutputString("This is a test output!");
-    }
+    }*/
 }

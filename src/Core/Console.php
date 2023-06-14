@@ -31,7 +31,7 @@ class Console
             // Set logger for app
             $loggerName = Helper::getBaseClass($commandClassName);
             $logger = new Logger($loggerName);
-            $handler = new StreamHandler(Config::getParam('MAIN_LOG'));
+            $handler = new StreamHandler(Config::getParam('MAIN_LOG'), Config::getParam('APP_DEBUG') == 'true'?Logger::DEBUG:Logger::INFO);
             $handler->setFormatter(new LineFormatter(Config::getParam('LOG_FORMATTER')));
             $logger->pushHandler($handler); // 'php://stderr'
 
