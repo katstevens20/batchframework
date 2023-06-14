@@ -9,6 +9,8 @@ class ATestCommand extends BaseCommand implements CommandInterface
 {
     public function execute(array $arguments): void
     {
-        echo "This is a test output!";
+        $this->logger->info("Info: Test info message");
+        $this->logger->debug("Debug: Test debug message");
+        echo "This is a test output!\n";
     }
 }
