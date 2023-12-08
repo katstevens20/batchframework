@@ -2,6 +2,7 @@
 <?php
 
 use Kat\BatchFramework\Core\Console;
+use Throwable;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -10,7 +11,7 @@ date_default_timezone_set('Europe/Paris');
 try {
     $console = new Console();
     $console($argv, __DIR__ . '/../.env');
-} catch (Exception $e) {
+} catch (Throwable $e) {
     echo "\nError: " . $e->getMessage() . "\n";
     echo $e->getTraceAsString();
     exit(1);
