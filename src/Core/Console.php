@@ -36,6 +36,11 @@ class Console
             $handler->setFormatter(new LineFormatter(Config::getParam('LOG_FORMATTER')));
             $logger->pushHandler($handler); // 'php://stderr'
 
+            $sleepTime = (int) Config::getParam('SLEEP_TIME_BEFORE_FIRST_EXECUTION');
+            if($sleepTime > 0) {
+                $logger->info("Sleeping for $sleepTime seconds before first execution.");
+                sleep($sleepTime);
+            }
             // Run app
             $runner = new Runner;
             if (!class_exists($commandClassName)) {
