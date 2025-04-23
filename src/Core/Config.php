@@ -11,12 +11,12 @@ class Config
      * @return string
      * @throws Exception
      */
-    public static function getParam(string $paramName): string
+    public static function getParam(string $paramName, $isMandatory = true): string
     {
 
         $parameterValue = getenv($paramName, true);
 
-        if (!$parameterValue) {
+        if (!$parameterValue && $isMandatory) {
             throw new Exception("'$paramName' Parameter not found or empty!");
         }
         return $parameterValue;
